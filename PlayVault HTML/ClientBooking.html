@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayVault - Turf Management</title>
+    <link rel="stylesheet" href="../PlayVault CSS/Clientbooking.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
+</head>
+<body>
+    <div class="main">
+        <nav class="NavigationBar">
+            <div class="Icon">
+                <a href="#">
+                    <h2 class="logo">PLAYVAULT</h2>
+                </a>
+            </div>
+        </nav>
+        <div class="content-container">
+            <div class="left-side">
+                <h2>DATE</h2>
+                <div class="date-section">
+                    <button id="dateButton" class="selection-button">7 January 2025</button>
+                    <div id="calendarPopup" class="calendar-popup hidden">
+                        <div class="calendar-header">
+                            <button class="calendar-nav" id="prevMonth">&lt;</button>
+                            <span id="currentMonth">January</span>
+                            <button class="calendar-nav" id="nextMonth">&gt;</button>
+                        </div>
+                        <div class="calendar-days">
+                            <div>Sun</div>
+                            <div>Mon</div>
+                            <div>Tue</div>
+                            <div>Wed</div>
+                            <div>Thu</div>
+                            <div>Fri</div>
+                            <div>Sat</div>
+                        </div>
+                        <div id="calendarDates" class="calendar-dates"></div>
+                    </div>
+                </div>
+
+                <div class="bulk-section">
+                    <div class="bulk-actions">
+                        <div class="custom-dropdown" id="bulkPeriod">
+                            <div class="dropdown-selected" data-value="daily">
+                                <span class="selected-text">Select-type</span>
+                                <svg class="dropdown-arrow" viewBox="0 0 24 24" width="24" height="24">
+                                    <path d="M7 10l5 5 5-5z" />
+                                </svg>
+                            </div>
+                            <div class="dropdown-options">
+                                <div class="dropdown-option" data-value="daily">Daily</div>
+                                <div class="dropdown-option" data-value="weekly">Weekly</div>
+                                <div class="dropdown-option" data-value="monthly">Monthly</div>
+                            </div>
+                        </div>
+                        <!-- <button id="bulkBlockBtn" class="bulk-button">Block Time Range</button> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <div class="time-container">
+                    <h2>TIME</h2>
+                    <div class="period-buttons">
+                        <button class="period-button" data-period="Night">Night</button>
+                        <button class="period-button" data-period="Morning">Morning</button>
+                        <button class="period-button" data-period="Noon">Noon</button>
+                        <button class="period-button" data-period="Evening">Evening</button>
+                    </div>
+                    <div class="slot-buttons"></div>
+                    <div id="bulkTimeRange" class="bulk-time-range hidden">
+                        <h3>Select Time Range</h3>
+                        <div class="time-selection-container">
+                            <div class="time-select-group">
+                                <label>Start Time</label>
+                                <div class="custom-dropdown" id="startTimeDropdown">
+                                    <button class="dropdown-toggle">Start-time</button>
+                                    <div class="dropdown-menu">
+                                        <!-- Time slots will be inserted here by JavaScript -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time-select-group">
+                                <label>End Time</label>
+                                <div class="custom-dropdown" id="endTimeDropdown">
+                                    <button class="dropdown-toggle">End-time</button>
+                                    <div class="dropdown-menu">
+                                        <!-- Time slots will be inserted here by JavaScript -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bulk-time-actions">
+                            <button id="confirmBulkBlock">Block</button>
+                            <button id="cancelBulkBlock">Unblock</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-container">
+            <button id="bookBtn" class="bottom-button">Book</button>
+            <button id="cancelBtn" class="bottom-button">Cancel</button>
+        </div>
+    </div>
+    <script src="../PlayVault JS/Clientbooking.js"></script>
+</body>
+</html>

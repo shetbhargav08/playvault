@@ -1,0 +1,940 @@
+/* General Reset */
+* {
+  margin: 0;  /* Remove default margin */
+  padding: 0;  /* Remove default padding */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  font-family: Arial, sans-serif;
+}
+
+/* Main Container */
+.main {
+  width: 100%;
+  margin-top: 99px; /* Height of Navigation Bar */
+}
+
+/* Navigation Bar */
+.NavigationBar {
+  background-color: rgba(105, 105, 105, 0.1); /* Add background color */
+  width: 100%;
+  height: 99px; /* Height of Navigation Bar */
+  position: fixed; /* it will remain on same position even if user scrolls. Stay visible all the time */
+  top: 0; /* Stick to top from top there will be no space */
+  left: 0; /* Stick to left */
+  display: flex;  /* allows elements to be arranged easily along a row or column */
+  align-items: center; /* Align items vertically */
+  padding: 0 40px;  /* 0 means no padding at top and bottom. 40 means padding at left and right */
+  border-bottom: 1px solid rgba(105, 105, 105, 0.2); /* Add border at bottom */
+  z-index: 1000; /* elements with higher values will appear on top of those with lower values */
+}
+
+.Icon {
+  width: 244px; 
+  height: 88px;
+  display: flex;
+  align-items: center;
+}
+
+.Icon a {
+  text-decoration: none;  /* remove any text decorations applied to an element, such as underlines, overlines, or line-throughs. */
+}
+
+.logo {
+  color: black;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+/* Menu Section */
+.Menu {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 20px; /* space between items in a flex container or grid layout.*/
+}
+
+.Search-Button {
+  background-color: rgba(105, 105, 105, 0.1);
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 25px; /* Rounded corners */
+  padding: 12px 20px;
+  min-width: 300px; 
+  cursor: pointer; /* Change cursor to pointer */
+  transition: 0.3s; /* Add transition effect */
+}
+
+.Search-Button:hover {
+  background-color: rgba(105, 105, 105, 0.2);
+}
+
+.search-icon {
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+.search-text {
+  color: #666;
+  font-size: 16px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none; /* Remove default list style */
+  gap: 41px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  border-bottom: 2px solid black;
+  padding-bottom: 5px;
+}
+
+.signInButton {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 41px;
+  min-width: 100px;
+  transition: 0.3s;
+}
+
+/* Modal Styles  SIGN IN PAGE STARTS */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1100;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  height: 500px;
+  background-color: white;
+  padding: 50px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  /* moves the element upward by 50% of its height and leftward by 50% of its width, effectively centering the element both horizontally and vertically within its parent element*/
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Close Button */
+
+.close-button {
+  position: absolute;  /* position an element relative to its nearest positioned ancestor  */
+  top: 16px;
+  right: 16px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.3s;
+}
+
+.close-button:hover {
+  color: #333;
+}
+
+/* Get started  */
+
+.modal-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Modal Buttons Google and Email */
+
+.modal-button {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  align-items: center;
+  font-size: 16px;
+  transition: 0.3s;
+  text-align: left;
+  justify-content: space-between;
+  padding: 15px 20px; /* Add padding to adjust spacing */
+}
+
+
+.modal-button:hover {
+  background-color: #f5f5f5;
+}
+
+/* Icon of the buttons like google and email */
+
+.modal-button i {
+  font-size: 20px;
+  min-width: 24px;
+  text-align: left;
+}
+
+/* Text of the buttons like google and email */
+
+.modal-button span {
+  grid-column: 2;
+  text-align: center;
+  padding-right: 50px;
+}
+
+/* Divider i.e. OR */
+.divider {
+  text-align: center;
+  margin: 24px 0 24px;
+  color: black;
+  position: relative;
+  font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 45%;
+  height: 1px;
+  background-color: #ddd;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+/* Mobile Input Section */
+.mobile-input {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 8px;
+}
+
+/* Indian Flag Icon */
+
+.country-code {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+  font-size: 16px;
+}
+
+.flag-icon {
+  width: 20px;
+  height: 15px;
+  object-fit: contain;
+}
+
+/* Enter mobile number text */
+
+.mobile-number-input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 8px 0;
+  background: transparent;
+  border-bottom: 1px solid  #b8b6b6;
+  align-items: center;
+}
+
+.mobile-number-input:focus{
+  border-bottom: 1px solid black;
+}
+
+/* sign-in-Continue Button */
+.sign-in-continue-button{
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: not-allowed;
+  background-color: #e0e0e0;
+  color: white;
+  cursor: not-allowed;
+  transition: background-color 0.3s, color 0.3s;
+  margin-top: 80px;
+  display: none;
+}
+
+.sign-in-continue-button.focused {
+  display: block; /* Show button */
+  
+}
+
+.sign-in-continue-button:not(:disabled) {
+  background-color: #333;
+  cursor: pointer;
+}
+
+/* Email Login Container */
+.email-login-container {
+  height: 500px;
+  background-color: white;
+  padding: 50px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: slideDown 0.3s ease-out;
+}
+
+.email-header {
+  margin-bottom: 24px;
+}
+
+.back-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: black;
+  background: none;
+  border: none;
+  padding: 5px;
+  transition: color 0.3s;
+}
+
+/* Login with Email */
+
+.email-title {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #333;
+}
+
+/* Continue Button */
+.Email-continue-button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: not-allowed;
+  background-color: #e0e0e0;
+  color: white;
+  transition: background-color 0.3s;
+  margin-top: 170px;
+}
+
+.Email-continue-button:not(:disabled) {
+  background-color: #333;
+  cursor: pointer;
+}
+
+.Email-continue-button:not(:disabled):hover {
+  background-color: #444;
+}
+
+/* Slide down animation of sigin page */
+
+@keyframes slideDown {
+  from {
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+/* Location CSS */
+
+/* Add these styles to your existing CSS file */
+.location-overlay {
+  position: fixed;
+  top: 0; /* Height of navbar */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Light grey overlay */
+  z-index: 1100;
+}
+
+.location-container {
+  height: auto; /* Add minimum height */
+  min-height: 400px; /* Add minimum height */
+  background-color: white;
+  padding: 60px 50px 60px 50px; /* Reduced from 50px */
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: slideDown 0.3s ease-out;
+}
+
+.search-container {
+  margin-bottom: 30px;
+  position: relative; /* Add this */
+  width: 100%;
+}
+
+.search-container::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; /* Adjust this value to control spacing */
+  left: -50px; /* Match container padding */
+  right: -50px; /* Match container padding */
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.05); /* Light grey line */
+}
+
+.search-box {
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.search-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Adds a sleek line after each item */
+  transition: background-color 0.2s ease;
+  font-size: 14px;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f5f5;
+}
+
+.dropdown-item strong {
+  font-weight: bold;
+  color: #000;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  background-color: white;
+  border-radius: 4px;
+  color: black;
+  padding-left: 20px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.search-box input::placeholder {
+  color:rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+}
+
+.search-box i {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.detect-location {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0; 
+  font-weight: bold;
+}
+
+.detect-location i {
+  font-size: 18px;
+  margin-left: 2px
+}
+
+.popular-cities {
+  margin-top: 20px;
+  text-align: center;
+  padding-bottom: 0; 
+}
+
+.popular-cities h2 {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: normal;
+}
+
+/* .cities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+} */
+
+.city-card {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 10px; 
+}
+
+.city-card:last-child {
+  margin-bottom: 0px; /* Remove margin from last card */
+}
+
+.city-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* .city-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 10px;
+} */
+
+.city-name {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+  font-weight: normal;
+}
+
+.nav-links li a {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+/* Verification Page CSS */
+
+.verification-container {
+  height: 500px;
+  background-color: white;
+  padding: 50px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: slideDown 0.3s ease-out;
+  z-index: 1100;
+}
+
+.verification-title {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.verification-subtitle {
+  color: #666;
+  margin-bottom: 24px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.verification-subtitle strong {
+  color: #333;
+  font-weight: 500;
+  display: inline;
+  margin-top: 0;  /* Remove the margin since it's now inline */
+}
+
+.otp-input-container {
+  display: flex;
+  gap: 8px;
+  justify-content: left;
+  margin-bottom: 24px;
+}
+
+.otp-input {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.otp-input:focus {
+  border-color: grey;
+  outline: none;
+  box-shadow: 0 0 0 2px darkgray;
+}
+
+.resend-container {
+  text-align: center;
+  color: #666;
+}
+
+.resend-button {
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+  margin-left: 4px;
+  font-weight: bold;
+}
+
+.verify-continue-button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: not-allowed;
+  background-color: #e0e0e0;
+  color: white;
+  transition: background-color 0.3s;
+  margin-top: 139px;  /* This will push the button down */  
+}
+
+.verify-continue-button:disabled {
+  background-color: #e0e0e0; /* Grey when disabled */
+  cursor: not-allowed;
+}
+
+.verify-continue-button:not(:disabled) {
+  cursor: pointer;
+}
+
+.verification-header {
+  margin-bottom: 24px;
+}
+
+.back-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: black;
+  background: none;
+  border: none;
+  padding: 5px;
+  transition: color 0.3s;
+}
+
+/* Main container styles */
+.container {
+width: 100%;
+height: 99px; 
+margin: 0 auto;
+padding: 20px;
+flex: 1;
+display: flex;
+flex-direction: column;
+}
+
+/* Section styles */
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Add this line */
+  padding: 15px;
+}
+
+.section h2 {
+font-size: 16px;
+font-weight: bold;
+margin-bottom: 15px;
+color: #333;
+}
+
+/* Button styles */
+.button-group {
+display: flex;
+gap: 15px;
+flex-wrap: wrap;
+}
+
+.selection-button {
+padding: 10px 30px;
+border-radius: 25px;
+border: 1px solid rgba(0,0,0,0.1);
+background-color: white;
+cursor: pointer;
+font-size: 14px;
+transition: all 0.3s ease;
+}
+
+.selection-button.active {
+background-color:rgba(0,0,0,0.1);
+border-color: rgba(0,0,0,0.5);
+}
+
+.selection-button.selected {
+  background-color:rgba(0,0,0,0.1);
+  border-color: rgba(0,0,0,0.5);
+  color: black; /* Change text color to a darker grey for contrast */
+}
+
+/* Calendar styles */
+.calendar-popup {
+  display: none;
+  position: absolute;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  padding: 15px;
+  width: 300px;
+  margin-top: 30px;
+  z-index: 1000;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+  .calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: bold;
+}
+
+  .calendar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: white; /* Light gray background */
+  border: 1px solid #ccc; /* Light gray border */
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+  .calendar-nav:hover {
+  background-color: rgba(0,0,0,0.1); /* Light gray hover background */
+}
+
+  .calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  color:rgba(0,0,0,0.5);
+  font-weight: bold;
+}
+
+  .calendar-dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+  .calendar-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+  .calendar-date:hover {
+  background-color:rgba(0,0,0,0.1);
+  border-radius: 5px;
+}
+
+  .calendar-date.active {
+  background-color: #333;
+  color: white;
+}
+
+.calendar-date.disabled {
+  background-color: #f4f4f4; /* Light gray background */
+  color: rgba(0, 0, 0, 0.3); /* Light gray text color */
+  cursor: not-allowed; /* Disable pointer interaction */
+  border-radius: 5px; /* Circular shape to match other dates */
+}
+
+/* Time selection styles */
+.time-slots {
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+.period-buttons {
+display: flex;
+gap: 15px;
+flex-wrap: wrap;
+margin-bottom: 8px;
+}
+
+.period-button {
+padding: 10px 30px;
+border-radius: 25px;
+border: 1px solid rgba(0,0,0,0.1);
+background-color: white;
+cursor: pointer;
+font-size: 14px;
+transition: all 0.3s ease;
+}
+
+.period-button.active {
+background-color: rgba(0,0,0,0.1);
+border-color: rgba(0,0,0,0.5);
+}
+
+.slot-buttons {
+display: grid;
+grid-template-columns: repeat(6, 1fr);
+gap: 10px;
+}
+
+.slot-button {
+padding: 8px;
+border-radius: 20px;
+border: 1px solid rgba(0,0,0,0.1);
+background-color: white;
+cursor: pointer;
+font-size: 12px;
+transition: all 0.3s ease;
+text-align: center;
+}
+
+.slot-button.active {
+background-color: rgba(0,0,0,0.1);
+border-color: rgba(0,0,0,0.5);
+}
+
+.slot-button.disabled {
+opacity: 0.5;
+cursor: not-allowed;
+}
+
+/* Payment button styles */
+/* .payment-section {
+margin-top: auto;
+padding: 20px 0;
+position: sticky;
+bottom: 0;
+background-color: white;
+box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+} */
+
+.payment-button {
+  position: fixed; /* Fix the button at the bottom of the page */
+  left: 0;         /* Align the button to the left edge */
+  bottom: 0;       /* Position it at the bottom of the page */
+  width: 100%;     /* Make the button span the full width of the screen */
+  padding: 15px; /* Add margin to adjust spacing */
+  background-color: grey;
+  color: white;
+  border: none; 
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+ /* z-index: 9999; /* Make sure the button stays on top of other elements */
+}
+
+
+

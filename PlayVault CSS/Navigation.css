@@ -1,0 +1,110 @@
+/* General Reset */
+* {
+    margin: 0;  /* Remove default margin */
+    padding: 0;  /* Remove default padding */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Main Container */
+  .main {
+    width: 100%;
+    margin-top: 99px;
+  }
+  
+  /* Navigation Bar */
+  .NavigationBar {
+    background-color: rgba(105, 105, 105, 0.1); /* Add background color */
+    width: 100%;
+    height: 99px; /* Height of Navigation Bar */
+    position: fixed; /* it will remain on same position even if user scrolls. Stay visible all the time */
+    top: 0; /* Stick to top from top there will be no space */
+    left: 0; /* Stick to left */
+    display: flex;  /* allows elements to be arranged easily along a row or column */
+    align-items: center; /* Align items vertically */
+    padding: 0 40px;  /* 0 means no padding at top and bottom. 40 means padding at left and right */
+    border-bottom: 1px solid rgba(105, 105, 105, 0.2); /* Add border at bottom */
+    z-index: 1000; /* elements with higher values will appear on top of those with lower values */
+  }
+  
+  .Icon {
+    width: 244px; 
+    height: 88px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .Icon a {
+    text-decoration: none;  /* remove any text decorations applied to an element, such as underlines, overlines, or line-throughs. */
+  }
+  
+  .logo {
+    color: black;
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  /* Menu Section */
+  .Menu {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 20px; /* space between items in a flex container or grid layout.*/
+  }
+  
+  .Search-Button {
+    background-color: rgba(105, 105, 105, 0.1);
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    padding: 12px 20px;
+    min-width: 300px; 
+    cursor: pointer; /* Change cursor to pointer */
+    transition: 0.3s; /* Add transition effect */
+  }
+  
+  .Search-Button:hover {
+    background-color: rgba(105, 105, 105, 0.2);
+  }
+  
+  .search-icon {
+    margin-right: 10px;
+    font-size: 15px;
+  }
+  
+  .search-text {
+    color: #666;
+    font-size: 16px;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none; /* Remove default list style */
+    gap: 41px;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+  }
+  
+  .signInButton {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 41px;
+    min-width: 100px;
+    transition: 0.3s;
+  }

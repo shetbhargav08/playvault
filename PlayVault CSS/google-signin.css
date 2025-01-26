@@ -1,0 +1,171 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 48px 40px 36px;
+}
+
+.signin-container {
+    min-height: 500px;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    padding: 48px 40px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.google-logo {
+    margin-bottom: 24px;
+}
+
+.google-logo img {
+    height: 24px;
+}
+
+.signin-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.signin-header h1 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #202124;
+    margin-bottom: 8px;
+}
+
+.signin-header p {
+    font-size: 16px;
+    color: #202124;
+}
+
+.app-name {
+    color: #1a73e8;
+}
+
+.account-list {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.account-option {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 16px;
+    transition: background-color 0.2s;
+}
+
+.account-option:hover {
+    background-color: #f7f8f9;
+}
+
+.account-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #ff6b01;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    margin-right: 16px;
+}
+
+.account-details {
+    flex: 1;
+}
+
+.account-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #202124;
+    margin-bottom: 4px;
+}
+
+.account-email {
+    font-size: 14px;
+    color: #5f6368;
+}
+
+.another-account {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.another-account:hover {
+    background-color: #f7f8f9;
+}
+
+.account-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+}
+
+.account-icon i {
+    font-size: 24px;
+    color: #5f6368;
+}
+
+.account-text {
+    font-size: 14px;
+    color: #3c4043;
+}
+
+.privacy-notice {
+    margin-top: auto;
+    padding-top: 32px;
+    border-top: 1px solid #dadce0;
+    text-align: center;
+}
+
+.privacy-notice p {
+    font-size: 12px;
+    color: #5f6368;
+    line-height: 1.4;
+}
+
+.privacy-notice a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.privacy-notice a:hover {
+    text-decoration: underline;
+}
+
+/* Keyboard focus styles */
+.account-option:focus,
+.another-account:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #1a73e8;
+}

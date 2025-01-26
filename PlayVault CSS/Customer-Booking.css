@@ -1,0 +1,326 @@
+/* Main container styles */
+.container {
+    width: 100%;
+    height: 99px; 
+    margin: 0 auto;
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    }
+    
+    /* Section styles */
+    .section {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* Add this line */
+      padding: 15px;
+    }
+    
+    .section h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+    }
+    
+    /* Button styles */
+    .button-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    }
+    
+    .selection-button {
+    padding: 10px 30px;
+    border-radius: 25px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background-color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    }
+    
+    .selection-button.active {
+    background-color:rgba(0,0,0,0.1);
+    border-color: rgba(0,0,0,0.5);
+    }
+    
+    .selection-button.selected {
+      background-color:rgba(0,0,0,0.1);
+      border-color: rgba(0,0,0,0.5);
+      color: black; /* Change text color to a darker grey for contrast */
+    }
+    
+    /* Calendar styles */
+    .calendar-popup {
+      display: none;
+      position: absolute;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      padding: 15px;
+      width: 300px;
+      margin-top: 30px;
+      z-index: 1000;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    
+      .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: bold;
+    }
+    
+      .calendar-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 5px;
+      background-color: white; /* Light gray background */
+      border: 1px solid #ccc; /* Light gray border */
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    
+      .calendar-nav:hover {
+      background-color: rgba(0,0,0,0.1); /* Light gray hover background */
+    }
+    
+      .calendar-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+      font-size: 12px;
+      margin-bottom: 10px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      color:rgba(0,0,0,0.5);
+      font-weight: bold;
+    }
+    
+      .calendar-dates {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    
+      .calendar-date {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 35px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 14px;
+    }
+    
+      .calendar-date:hover {
+      background-color:rgba(0,0,0,0.1);
+      border-radius: 5px;
+    }
+    
+      .calendar-date.active {
+      background-color: #333;
+      color: white;
+    }
+    
+    .calendar-date.disabled {
+      background-color: #f4f4f4; /* Light gray background */
+      color: rgba(0, 0, 0, 0.3); /* Light gray text color */
+      cursor: not-allowed; /* Disable pointer interaction */
+      border-radius: 5px; /* Circular shape to match other dates */
+    }
+    
+    /* Time selection styles */
+    .time-slots {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    }
+    
+    .period-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+    }
+    
+    .period-button {
+    padding: 10px 30px;
+    border-radius: 25px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background-color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    }
+    
+    .period-button.active {
+    background-color: rgba(0,0,0,0.1);
+    border-color: rgba(0,0,0,0.5);
+    }
+    
+    .slot-buttons {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    }
+    
+    .slot-button {
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background-color: white;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    text-align: center;
+    }
+    
+    .slot-button.active {
+    background-color: rgba(0,0,0,0.1);
+    border-color: rgba(0,0,0,0.5);
+    }
+    
+    .slot-button.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    }
+    
+    /* Payment button styles */
+    /* .payment-section {
+    margin-top: auto;
+    padding: 20px 0;
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    } */
+    
+    .payment-button {
+      position: fixed; /* Fix the button at the bottom of the page */
+      left: 0;         /* Align the button to the left edge */
+      bottom: 0;       /* Position it at the bottom of the page */
+      width: 100%;     /* Make the button span the full width of the screen */
+      padding: 15px; /* Add margin to adjust spacing */
+      background-color: grey;
+      color: white;
+      border: none; 
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+     /* z-index: 9999; /* Make sure the button stays on top of other elements */
+    }
+
+    /* Update the container to use grid layout */
+/* Update the container to use grid layout */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 400px; /* Main content takes 1fr, cart takes 400px */
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Cart styles */
+.cart-container {
+  position: sticky;
+  top: 2rem; /* Adjust based on your navbar height */
+  height: fit-content;
+}
+
+.cart-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid rgba(105, 105, 105, 0.2);
+  padding: 30px;
+}
+
+.cart-title {
+  color: black;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-item {
+  padding: 20px;
+  border: 1px solid rgba(105, 105, 105, 0.2);
+  border-radius: 12px;
+  position: relative;
+}
+
+.cart-item-content {
+  display: grid;
+  gap: 20px;
+}
+
+.cart-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-item-title {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.cart-item-price {
+  color: black;
+  font-size: 14px;
+}
+
+.cart-item-details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: black;
+  font-size: 14px;
+}
+
+.cart-item-remove {
+  position: absolute;
+  top: 1px;
+  right: 5px;
+  cursor: pointer;
+  color: black;
+  background: none;
+  border: none;
+  padding: 1px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.proceed-btn {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 12px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.proceed-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+

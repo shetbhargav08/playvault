@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayVault</title>
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="../PlayVault CSS/Navigation.css">
+    <link rel="stylesheet" href="../PlayVault CSS/Sign-in.css">
+    <link rel="stylesheet" href="../PlayVault CSS/Location.css">
+    <link rel="stylesheet" href="../PlayVault CSS/Customer-Booking.css">
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="main">
+        <!-- Navigation Bar -->
+        <nav class="NavigationBar">
+            <div class="Icon">
+                <!-- Logo of the website -->
+                <a href="#">
+                    <h2 class="logo">PlayVault</h2>
+                </a>
+            </div>
+
+            <div class="Menu">
+                <!-- Search Button with Icon -->
+                <button class="Search-Button">
+                    <span class="search-icon"><i class="fas fa-search"></i></span>
+                    <span class="search-text">Search</span>
+                </button>
+
+                <!-- Navigation Links -->
+                <ul class="nav-links">
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#location">Location</a></li>
+                </ul>
+            </div>
+
+            <!-- Sign-in Button -->
+            <button class="signInButton" onclick="openLoginModal()">Sign In</button>
+        </nav>
+
+        <!-- Login Modal with Overlay -->
+        <div class="modal-overlay" id="loginModal">
+            <!-- Login Container (Main Login Options) -->
+            <div class="login-container">
+                <!-- Close Button for Modal -->
+                <button class="close-button" onclick="closeLoginModal()">&times;</button>
+                <h2 class="modal-title">Get Started</h2>
+
+                <!-- Continue with Google Option -->
+                <button class="modal-button">
+                    <i class="fab fa-google"></i>
+                    <span class="button-text">Continue with Google</span>
+                </button>
+
+                <!-- Continue with Email Option -->
+                <button class="modal-button" onclick="showEmailPage()">
+                    <i class="far fa-envelope icon"></i>
+                    <span>Continue with Email</span>
+                </button>
+
+                <!-- Divider between options -->
+                <div class="divider">OR</div>
+
+                <!-- Mobile Number Input Section -->
+                <div class="mobile-input">
+                    <div class="country-code">
+                        <!-- Country Flag and Code -->
+                        <img src="https://flagcdn.com/w20/in.png" alt="Indian flag" class="flag-icon">
+                        <span>+91</span>
+                    </div>
+                    <!-- Input for Mobile Number -->
+                    <input type="tel" class="mobile-number-input" placeholder="Enter mobile number" maxlength="10"
+                        id="mobileInput">
+                </div>
+                <!-- Continue Button for Mobile Number -->
+                <button class="sign-in-continue-button" id="mobileSubmitBtn" style="display: none;">Continue</button>
+            </div>
+
+            <!-- Email Login Container (When user selects Email Login) -->
+            <div class="email-login-container" id="emailContainer" style="display: none;">
+                <div class="email-header">
+                    <!-- Back Button to Return to Main Login Page -->
+                    <button class="back-button" onclick="showMainLogin()">&#x276E;</button>
+                </div>
+                <h2 class="email-title">Login with Email</h2>
+                <div class="email-form">
+                    <div class="form-group">
+                        <label for="emailInput">Email</label>
+                        <!-- Input for Email -->
+                        <input type="email" id="emailInput" placeholder="">
+                    </div>
+                    <!-- Continue Button for Email -->
+                    <button class="Email-continue-button" id="emailSubmitBtn" disabled>Continue</button>
+                </div>
+            </div>
+
+            <!-- Verification Container (When verifying Mobile Number via OTP) -->
+            <div class="verification-container" id="verificationContainer" style="display: none;">
+                <div class="verification-header">
+                    <!-- Back Button to Return to Main Login Page -->
+                    <button class="back-button" onclick="showMainLogin()">&#x276E;</button>
+                </div>
+                <h2 class="verification-title">Verify your Mobile Number</h2>
+                <p class="verification-subtitle">Enter OTP sent to <span id="displayMobileNumber"></span></p>
+
+                <!-- OTP Input Fields -->
+                <div class="otp-input-container">
+                    <input type="text" maxlength="1" class="otp-input" data-index="0">
+                    <input type="text" maxlength="1" class="otp-input" data-index="1">
+                    <input type="text" maxlength="1" class="otp-input" data-index="2">
+                    <input type="text" maxlength="1" class="otp-input" data-index="3">
+                    <input type="text" maxlength="1" class="otp-input" data-index="4">
+                    <input type="text" maxlength="1" class="otp-input" data-index="5">
+                </div>
+                <!-- Resend OTP Section -->
+                <div class="resend-container">
+                    <span>Didn't receive OTP?</span>
+                    <button class="resend-button">Resend OTP</button>
+                </div>
+                <!-- Continue Button after OTP is entered -->
+                <button class="verify-continue-button" disabled>Continue</button>
+            </div>
+        </div>
+
+        <!-- Location Overlay Section -->
+        <div class="location-overlay" id="location" style="display: none;">
+            <div class="location-container">
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search your city, places" id="locationSearch">
+                        <i class="fas fa-search"></i>
+                        <div class="search-dropdown" id="searchDropdown"></div>
+                    </div>
+                    <button class="detect-location" id="detectLocation">
+                        <i class="fas fa-location-dot"></i>
+                        Detect my location
+                    </button>
+                </div>
+                
+                <div class="popular-cities">
+                    <h2>Popular cities</h2>
+                    <div class="cities-grid" id="citiesGrid"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Section Below Verification -->
+        <div class="container">
+            <!-- Main content -->
+            <main>
+                <!-- Sports Selection -->
+                <section class="section">
+                    <h2>SPORTS</h2>
+                    <div class="button-group">
+                        <button class="selection-button" data-type="sport">Cricket</button>
+                        <button class="selection-button" data-type="sport">Football</button>
+                    </div>
+                </section>
+
+                <!-- Pitch Size -->
+                <section class="section">
+                    <h2>PITCH SIZE</h2>
+                    <div class="button-group">
+                        <button class="selection-button" data-type="pitch">7 v 7</button>
+                    </div>
+                </section>
+
+                <!-- Date Selection -->
+                <section class="section">
+                    <h2>DATE</h2>
+                    <div class="button-group">
+                        <button id="dateButton" class="selection-button">1 Jan 2025</button>
+                    </div>
+                    <!-- Calendar popup -->
+
+                    <div id="calendarPopup" class="calendar-popup">
+                        <div class="calendar-header">
+                            <button class="calendar-nav" id="prevMonth">&lt;</button>
+                            <span id="currentMonth">January</span>
+                            <button class="calendar-nav" id="nextMonth">&gt;</button>
+                        </div>
+                        <div class="calendar-days">
+                            <div>Sun</div>
+                            <div>Mon</div>
+                            <div>Tue</div>
+                            <div>Wed</div>
+                            <div>Thu</div>
+                            <div>Fri</div>
+                            <div>Sat</div>
+                        </div>
+                        <div id="calendarDates" class="calendar-dates"></div>
+                    </div>
+                </section>
+
+                <!-- Time Selection -->
+                <section class="section">
+                    <h2>TIME</h2>
+                    <div class="time-slots">
+                        <div class="period-buttons">
+                            <button class="period-button" data-period="Night">Night</button>
+                            <button class="period-button" data-period="Morning">Morning</button>
+                            <button class="period-button" data-period="Noon">Noon</button>
+                            <button class="period-button" data-period="Evening">Evening</button>
+                        </div>
+                        <div class="slot-buttons"></div>
+                    </div>
+                </section>
+            </main>
+
+            <aside class="cart-container">
+                <div class="cart-card">
+                    <h2 class="cart-title">Cart (<span id="cartCount">0</span>)</h2>
+                    <div id="cartItems" class="cart-items">
+                        <!-- Cart items will be populated by JavaScript -->
+                    </div>
+                    <div class="cart-total">
+                        <button class="proceed-btn" id="proceedBtn" disabled>
+                            Proceed INR 0.00
+                        </button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Payment Button -->
+            <div class="payment-section">
+                <button id="proceedToPayBtn" class="payment-button">Proceed to Pay</button>
+            </div>
+                   
+        </div>
+    </div>
+
+    <!-- External Scripts -->
+    <script src="../PlayVault JS/script.js"></script>
+    <script src="../PlayVault JS/verification.js"></script>
+    <script src="../PlayVault JS/location.js"></script>
+    <script src="../PlayVault JS/Customer-Booking.js"></script>
+</body>
+
+</html>

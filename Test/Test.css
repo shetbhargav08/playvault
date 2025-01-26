@@ -1,0 +1,421 @@
+/* General Reset */
+* {
+    margin: 0;  /* Remove default margin */
+    padding: 0;  /* Remove default padding */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Main Container */
+  .main {
+    width: 100%;
+    margin-top: 99px;
+  }
+  
+  /* Navigation Bar */
+  .NavigationBar {
+    background-color: rgba(105, 105, 105, 0.1); /* Add background color */
+    width: 100%;
+    height: 99px; /* Height of Navigation Bar */
+    position: fixed; /* it will remain on same position even if user scrolls. Stay visible all the time */
+    top: 0; /* Stick to top from top there will be no space */
+    left: 0; /* Stick to left */
+    display: flex;  /* allows elements to be arranged easily along a row or column */
+    align-items: center; /* Align items vertically */
+    padding: 0 40px;  /* 0 means no padding at top and bottom. 40 means padding at left and right */
+    border-bottom: 1px solid rgba(105, 105, 105, 0.2); /* Add border at bottom */
+    z-index: 1000; /* elements with higher values will appear on top of those with lower values */
+  }
+  
+  .Icon {
+    width: 244px; 
+    height: 88px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .Icon a {
+    text-decoration: none;  /* remove any text decorations applied to an element, such as underlines, overlines, or line-throughs. */
+  }
+  
+  .logo {
+    color: black;
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  /* Menu Section */
+  .Menu {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 20px; /* space between items in a flex container or grid layout.*/
+  }
+  
+  .Search-Button {
+    background-color: rgba(105, 105, 105, 0.1);
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    padding: 12px 20px;
+    min-width: 300px; 
+    cursor: pointer; /* Change cursor to pointer */
+    transition: 0.3s; /* Add transition effect */
+  }
+  
+  .Search-Button:hover {
+    background-color: rgba(105, 105, 105, 0.2);
+  }
+  
+  .search-icon {
+    margin-right: 10px;
+    font-size: 15px;
+  }
+  
+  .search-text {
+    color: #666;
+    font-size: 16px;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none; /* Remove default list style */
+    gap: 41px;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+  }
+  
+  .signInButton {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 41px;
+    min-width: 100px;
+    transition: 0.3s;
+  }
+
+  .main-container {
+    display: flex;
+    gap: 10px;
+    max-width: 1400px;
+    margin: 30px;
+}
+
+.booking-container {
+    flex: 1;
+    max-width: 800px;
+}
+
+.booking-card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid rgba(105, 105, 105, 0.2);
+    padding: 40px;
+    margin: 40px;
+    width: 700px;
+}
+
+.booking-header {
+    margin-bottom: 40px;
+    text-align: left;
+    color: black;
+    font-size: 12px
+}
+
+/* Section styles */
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Add this line */
+    padding: 15px;
+  }
+  
+  .section h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+  }
+  
+  /* Button styles */
+  .button-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  }
+  
+  .selection-button {
+  padding: 10px 30px;
+  border-radius: 25px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background-color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  }
+  
+  .selection-button.active {
+  background-color:rgba(0,0,0,0.1);
+  border-color: rgba(0,0,0,0.5);
+  }
+  
+  .selection-button.selected {
+    background-color:rgba(0,0,0,0.1);
+    border-color: rgba(0,0,0,0.5);
+    color: black; /* Change text color to a darker grey for contrast */
+  }
+
+  .calendar-popup {
+    display: none;
+    position: absolute;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    padding: 15px;
+    width: 371px;
+    top: 510px;
+    left: 120px;
+    z-index: 1000;
+    /* margin-top: 5px; */
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.calendar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.calendar-nav:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+.calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.calendar-date:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.calendar-date.disabled {
+    background-color: #f4f4f4;
+    color: rgba(0, 0, 0, 0.3);
+    cursor: not-allowed;
+}
+
+/* Add this to ensure the calendar is hidden by default */
+.calendar-popup.hidden {
+    display: none;
+}
+
+.time-slots {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    }
+    
+    .period-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+    }
+    
+    .period-button {
+    padding: 10px 30px;
+    border-radius: 25px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background-color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    }
+    
+    .period-button.active {
+    background-color: rgba(0,0,0,0.1);
+    border-color: rgba(0,0,0,0.5);
+    }
+    
+    .slot-buttons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Updated to 3 slots per line */
+        gap: 10px;
+    }
+
+    .slot-button {
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background-color: white;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    text-align: center;
+    }
+    
+    .slot-button.active {
+    background-color: rgba(0,0,0,0.1);
+    border-color: rgba(0,0,0,0.5);
+    }
+    
+    .slot-button.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    }
+
+    .button {
+        width: 100%;
+        padding: 15px 30px;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        margin-top: 20px;
+    }
+    
+    .button.primary {
+        color: black;
+    }
+    
+    .button.primary:hover {
+        opacity: 0.9;
+    }
+    
+    .button.primary:disabled {
+        background-color: var(--secondary-color);
+        cursor: not-allowed;
+    }
+
+    .cart-container {
+        width: 400px;
+        position: absolute; /* Change from sticky to absolute */
+        top: 20%; /* Adjust the top position */
+        right: 10%; /* Position it to the right */
+        height: fit-content;
+    }
+    
+    .cart-card {
+        background: white;
+        border-radius: 12px;
+        border: 1px solid rgba(105, 105, 105, 0.2);
+        padding: 30px;
+    }
+    
+    .cart-title {
+        color: black;
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    
+    .cart-items {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .cart-item {
+        padding: 20px;
+        border: 1px solid rgba(105, 105, 105, 0.2);
+        border-radius: 12px;
+        position: relative;
+    }
+    
+    .cart-item-content {
+        display: grid;
+        gap: 20px;
+    }
+    
+    .cart-item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .cart-item-title {
+        font-weight: 500;
+        font-size: 14px;
+    }
+    
+    .cart-item-price {
+        color: black;
+        font-size: 14px;
+    }
+    
+    .cart-item-details {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: black;
+        font-size: 14px;
+    }
+    
+    .cart-item-remove {
+        position: absolute;
+        top: 1px;
+        right: 5px;
+        cursor: pointer;
+        color: black;
+        background: none;
+        border: none;
+        padding: 1px;
+        font-weight: bold;
+        font-size: 15px;
+    }
+    
+    .proceed-btn {
+        margin-top: 1.5rem;
+    }

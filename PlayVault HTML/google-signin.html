@@ -1,0 +1,56 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in - Google Accounts</title>
+    <link rel="stylesheet" href="google-signin.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="signin-container">
+            <!-- Google Logo -->
+            <div class="google-logo">
+                <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo">
+            </div>
+
+            <!-- Sign In Header -->
+            <div class="signin-header">
+                <h1>Choose an account</h1>
+                <p>to continue to <span class="app-name">GeeksforGeeks</span></p>
+            </div>
+
+            <!-- Account Options -->
+            <div class="account-list">
+                <!-- Existing Account -->
+                <div class="account-option" tabindex="0">
+                    <div class="account-avatar">B</div>
+                    <div class="account-details">
+                        <div class="account-name">BHARGAV SHET</div>
+                        <div class="account-email">bhargavshet@kccemsr.edu.in</div>
+                    </div>
+                </div>
+
+                <!-- Use Another Account -->
+                <div class="another-account" tabindex="0">
+                    <div class="account-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="account-text">Use another account</div>
+                </div>
+            </div>
+
+            <!-- Privacy Notice -->
+            <div class="privacy-notice">
+                <p>Before using this app, you can review GeeksforGeeks's <a href="#" class="privacy-link">privacy policy</a> and <a href="#" class="tos-link">Terms of Service</a>.</p>
+            </div>
+        </div>
+    </div>
+    <script src="google-signin.js"></script>
+</body>
+</html>
